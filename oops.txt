@@ -1,0 +1,145 @@
+single level inheritance
+------------------------
+import java.util.Scanner;
+class B 
+{
+    String m3(boolean c)
+    {
+        System.out.print(c);
+        return obj.next();
+    }
+    
+}
+class C extends B
+{
+    long m4()
+    {
+        return obj.nextLong();
+    }
+
+    public static void main(String args[])
+    {
+        C sc=new C();
+          System.out.print(sc.m3(obj.nextBoolean()));
+           System.out.print(sc.m4());
+    }
+}
+multi level inheritance
+-----------------------
+import java.util.Scanner;
+class A
+{
+    static Scanner obj=new Scanner(System.in);
+  int m1(int a)
+  {
+      System.out.print(a);
+      return obj.nextInt();
+  }
+  char m2(boolean b)
+  {
+      System.out.print(b);
+      return obj.next().charAt(0);
+  }
+  
+}
+class B extends A
+{
+    String m3(boolean c)
+    {
+        System.out.print(c);
+        return obj.next();
+    }
+    
+}
+class C extends B
+{
+    long m4()
+    {
+        return obj.nextLong();
+    }
+
+    public static void main(String args[])
+    {
+        C sc=new C();
+        System.out.print(sc.m1(obj.nextInt()));
+         System.out.print(sc.m2(obj.nextBoolean()));
+          System.out.print(sc.m3(obj.nextBoolean()));
+           System.out.print(sc.m4());
+    }
+}
+hierarchial inheritance
+-----------------------
+import java.util.Scanner;
+class A
+{
+    static Scanner obj=new Scanner(System.in);
+  int m1(int a)
+  {
+      System.out.print(a);
+      return obj.nextInt();
+  }
+  char m2(boolean b)
+  {
+      System.out.print(b);
+      return obj.next().charAt(0);
+  }
+  
+}
+class B extends A
+{
+    String m3(boolean c)
+    {
+        System.out.print(c);
+        return obj.next();
+    }
+    
+}
+class C extends A
+{
+    long m4()
+    {
+        return obj.nextLong();
+    }
+
+    public static void main(String args[])
+    {
+        C sc=new C();
+        System.out.print(sc.m1(obj.nextInt()));
+         System.out.print(sc.m2(obj.nextBoolean()));
+          System.out.print(new B().m3(obj.nextBoolean()));
+           System.out.print(sc.m4());
+    }
+}
+this at all levels-variable,method,constructor
+----------------------------------------------
+import java.util.Scanner;
+class A
+{
+    static Scanner obj=new Scanner(System.in);
+    int a=obj.nextInt();
+     void m1(char a)
+    {
+        System.out.print(a);
+       this.m2();
+        System.out.print(this.a);
+    }
+      void m2()
+    {
+        System.out.print(a);
+        
+    }
+    A()
+    {
+        this(obj.nextInt());
+        System.out.print("hi");
+    }
+    A(int a)
+    {
+        System.out.print(a);
+    }
+    public static void main(String args[])
+    {
+       new A().m1(obj.next().charAt(0));
+    }
+    
+}
